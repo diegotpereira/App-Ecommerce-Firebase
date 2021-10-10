@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppEcommerceFirebase">
         <activity
+            android:name=".AdminAddNovoProdutoActivity"
+            android:exported="true" />
+        <activity
             android:name=".AdminCategoriaActivity"
             android:exported="true" />
         <activity

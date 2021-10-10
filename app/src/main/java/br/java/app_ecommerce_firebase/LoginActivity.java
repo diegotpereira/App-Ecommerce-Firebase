@@ -71,6 +71,17 @@ public class LoginActivity extends AppCompatActivity {
                 nomeBancoPai = "Admins";
             }
         });
+
+        NotAdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                LoginBtn.setText("Entrar");
+                AdminLink.setVisibility(View.VISIBLE);
+                NotAdminLink.setVisibility(View.INVISIBLE);
+                nomeBancoPai = "Usuarios";
+            }
+        });
     }
 
     private void LoginUsuario() {
@@ -118,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Conectado com sucesso...", Toast.LENGTH_SHORT).show();
                                 progressoDialogo.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminAddNovoProdutoActivity.class);
                                 Predominante.atualUsuarioOnline = usuariosDado;
                                 startActivity(intent);
                             }
