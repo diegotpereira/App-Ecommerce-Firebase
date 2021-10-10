@@ -3,13 +3,13 @@ package br.java.app_ecommerce_firebase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +29,7 @@ public class RegistrarActivity extends AppCompatActivity {
     private EditText EntradaTelefoneNumero;
     private EditText EntradaSenha;
 
-    private ProgressBar barraCarregamento;
+    private ProgressDialog progressoDialogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class RegistrarActivity extends AppCompatActivity {
         EntradaNome = (EditText) findViewById(R.id.registro_usuario_entrada);
         EntradaSenha = (EditText) findViewById(R.id.registro_senha_entrada);
         EntradaTelefoneNumero = (EditText) findViewById(R.id.registro_telefone_numero_entrada);
-        barraCarregamento = new ProgressBar(this);
+        progressoDialogo = new ProgressDialog(this);
 
         CriarContaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,16 +65,18 @@ public class RegistrarActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor digite sua senha.", Toast.LENGTH_SHORT).show();
 
         } else {
-            //barraCarregamento.setTitulo("Criar Conta");
-            //barraCarregamento.setMensagem("Por favor aguarde, enquanto checamos suas credenciais.");
-            //barraCarregamento.setCancelado(false);
-            //barraCarregamento.show();
+
+            progressoDialogo.setTitle("Criar Conta");
+            progressoDialogo.setMessage("Por favor aguarde, enquanto checamos suas credenciais.");
+            progressoDialogo.setCanceledOnTouchOutside(false);
+            progressoDialogo.show();
 
             ValidarNumeroTelefone(nome, telefone, senha);
         }
     }
 
     private void ValidarNumeroTelefone(final String nome, final String telefone, final String senha) {
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -93,20 +95,20 @@ public class RegistrarActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Toast.makeText(RegistrarActivity.this, "Parabéns, sua conta foi criado com sucesso.", Toast.LENGTH_SHORT).show();
 
-                                //barraCarregamento.liberar();
+                                progressoDialogo.dismiss();
                                 Intent intent = new Intent(RegistrarActivity.this, LoginActivity.class);
                                 startActivity(intent);
 
                             } else {
-                                //barraCarregamento.liberar();
+                                progressoDialogo.dismiss();
                                 Toast.makeText(RegistrarActivity.this, "Erro de rede: tente novamente depois de algum tempo ...", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 } else {
                     Toast.makeText(RegistrarActivity.this, "Esse " + telefone + " já existe.", Toast.LENGTH_SHORT).show();
-                    
-                    //barraCarregamento.liberar();
+
+                    progressoDialogo.dismiss();
                     Toast.makeText(RegistrarActivity.this, "Tente novamente usando outro número de telefone.", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(RegistrarActivity.this, MainActivity.class);
