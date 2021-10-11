@@ -13,32 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/produto_imagem"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="40dp"
-            android:scaleType="centerCrop"
-
-            />
-
         <TextView
             android:id="@+id/produto_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/produto_imagem"
             android:text="Produto Nome"
+            android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/produto_imagem"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@+id/produto_nome"
+            android:scaleType="centerCrop"
+
+            />
+
         <TextView
             android:id="@+id/produto_preco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/produto_nome"
-            android:layout_marginTop="25dp"
+            android:layout_below="@+id/produto_imagem"
             android:text="Produto Preço"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
@@ -49,11 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/produto_preco"
-            android:layout_marginTop="25dp"
             android:text="Produto Descrição"
+            android:layout_marginTop="2dp"
             android:textAlignment="center"
+            android:textSize="16dp"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="16dp" />
+            />
 
     </RelativeLayout>
 
