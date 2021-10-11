@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import br.java.app_ecommerce_firebase.predominante.Predominante;
-import br.java.app_ecommerce_firebase.predominante.modelo.Usuarios;
+import br.java.app_ecommerce_firebase.modelo.Usuarios;
 import io.paperdb.Paper;
 
 public class LoginActivity extends AppCompatActivity {
@@ -114,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 if (snapshot.child(nomeBancoPai).child(telefone).exists()) {
                     Usuarios usuariosDado = snapshot.child(nomeBancoPai).child(telefone).getValue(Usuarios.class);
 

@@ -1,6 +1,6 @@
 package br.java.app_ecommerce_firebase.predominante;
 
-import br.java.app_ecommerce_firebase.predominante.modelo.Usuarios;
+import br.java.app_ecommerce_firebase.modelo.Usuarios;
 
 public class Predominante {
 

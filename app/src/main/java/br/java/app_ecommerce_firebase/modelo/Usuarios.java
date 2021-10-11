@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase.predominante.modelo;
+package br.java.app_ecommerce_firebase.modelo;
 
 public class Usuarios {
 
