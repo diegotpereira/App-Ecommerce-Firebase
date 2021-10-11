@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfiguracoesActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fechar_configuracoes_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fechar"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:id="@+id/atualizar_conta_configuracoes_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atualizar"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentEnd="true"
+                />
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagem_perfil_configuracoes"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/profile"
+        android:layout_below="@+id/app_bar_settings"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/mudanca_imagem_perfil_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mudar perfil"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/imagem_perfil_configuracoes"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/configuracoes_numero_telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mudanca_imagem_perfil_btn"
+        android:hint="Número Telefone..."
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/nome_completo_configuracoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/configuracoes_numero_telefone"
+        android:hint="Nome Completo..."
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/endereco_configuracoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nome_completo_configuracoes"
+        android:hint="Endereço..."
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        />
+
+
+</RelativeLayout>
