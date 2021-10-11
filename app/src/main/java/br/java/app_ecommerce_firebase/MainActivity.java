@@ -2,13 +2,15 @@ package br.java.app_ecommerce_firebase;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 
-import android.widget.ProgressBar;
+
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button aderirAgoraBtn;
     private Button loginBtn;
-    private ProgressBar barraCarregamento;
+    private ProgressDialog barraCarregamento;
 
 
     @Override
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         aderirAgoraBtn = (Button) findViewById(R.id.principal_junte_agora_btn);
         loginBtn = (Button) findViewById(R.id.principal_login_btn);
-        barraCarregamento = new ProgressBar(this);
+        barraCarregamento = new ProgressDialog(this);
 
         Paper.init(this);
 
@@ -62,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
            if (!TextUtils.isEmpty(UsuarioTelefoneChave) && !TextUtils.isEmpty(UsuarioSenhaChave)) {
                PermitirAcesso(UsuarioTelefoneChave, UsuarioSenhaChave);
 
-               //barraCarregamento.setTitulo("Já logado");
-               //barraCarregamento.setMensagem("Por favor aguarde...");
-               //barraCarregamento.setCanceladoToqueExterno(false);
-               //barraCarregamento.show();
+               barraCarregamento.setTitle("Já logado");
+               barraCarregamento.setMessage("Por favor aguarde...");
+               barraCarregamento.setCanceledOnTouchOutside(false);
+               barraCarregamento.show();
            }
         }
     }
@@ -83,21 +85,21 @@ public class MainActivity extends AppCompatActivity {
                     if (usuarioDados.getTelefone().equals(telefone)) {
                         if (usuarioDados.getSenha().equals(senha)) {
                             Toast.makeText(MainActivity.this, "Aguarde, você já está logado ...", Toast.LENGTH_SHORT).show();
-                            //.liberar();
+                            barraCarregamento.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             Predominante.atualUsuarioOnline = usuarioDados;
                             startActivity(intent);
 
                         } else {
-                            //barraCarregamento.liberar();
+                            barraCarregamento.dismiss();
 
                             Toast.makeText(MainActivity.this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 } else {
                     Toast.makeText(MainActivity.this, "Conta com este " + telefone + " número não existe.", Toast.LENGTH_SHORT).show();
-                    //barraCarregamento.liberar();
+                    barraCarregamento.dismiss();
                 }
             }
 
