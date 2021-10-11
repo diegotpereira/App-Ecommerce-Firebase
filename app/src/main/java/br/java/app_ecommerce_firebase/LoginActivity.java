@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LoginBtn.setText("Admin Entrou");
+                LoginBtn.setText("Entrar como Admin");
                 AdminLink.setVisibility(View.INVISIBLE);
                 NotAdminLink.setVisibility(View.VISIBLE);
 
