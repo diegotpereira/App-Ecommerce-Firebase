@@ -91,6 +91,7 @@ public class AdminAddNovoProdutoActivity extends AppCompatActivity {
         AddNovoProdutoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ValidarDadosProduto();
             }
         });
@@ -102,7 +103,19 @@ public class AdminAddNovoProdutoActivity extends AppCompatActivity {
         galeriaIntent.setType("image/*");
         startActivityForResult(galeriaIntent, GaleriaEscolha);
     }
-    
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==GaleriaEscolha  &&  resultCode==RESULT_OK  &&  data!=null)
+        {
+            ImagemUri = data.getData();
+            EntradaProdutoImagem.setImageURI(ImagemUri);
+        }
+    }
+
     private void ValidarDadosProduto() {
         Descricao = EntradaProdutoDescricao.getText().toString();
         Preco = EntradaProdutoPreco.getText().toString();
@@ -172,6 +185,7 @@ public class AdminAddNovoProdutoActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
                         if (task.isSuccessful()) {
+
                             downloadImagemUrl = task.getResult().toString();
 
                             Toast.makeText(AdminAddNovoProdutoActivity.this, "obteve a URL da imagem do produto com sucesso ...\n", Toast.LENGTH_SHORT).show();

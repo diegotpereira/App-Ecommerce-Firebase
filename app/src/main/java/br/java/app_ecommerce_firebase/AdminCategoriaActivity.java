@@ -39,6 +39,12 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         muchilasBolsasCarteiras = (ImageView) findViewById(R.id.muchilas_bolsas_carteiras);
         sapatos = (ImageView) findViewById(R.id.sapatos);
 
+        fonesOuvidosSemFio = (ImageView) findViewById(R.id.fones_ouvidos_sem_fio);
+        Laptops = (ImageView) findViewById(R.id.laptop_pc);
+        relogios = (ImageView) findViewById(R.id.relogios);
+        celulares = (ImageView) findViewById(R.id.celulares);
+
+
         tCamisas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
