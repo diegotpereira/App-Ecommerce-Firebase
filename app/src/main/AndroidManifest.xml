@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ProdutoDetalhesActivity"
+            android:exported="true" />
+        <activity
             android:name=".ConfiguracoesActivity"
             android:exported="true" />
         <activity
@@ -20,8 +23,8 @@
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".RegistrarActivity"
             android:exported="true" />

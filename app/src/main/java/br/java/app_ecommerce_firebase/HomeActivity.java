@@ -95,6 +95,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 holder.txtProdutoDescricao.setText(model.getDescricao());
                 holder.txtProdutoPreco.setText(model.getPreco());
                 Picasso.get().load(model.getImagem()).into(holder.exibirImagem);
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent(HomeActivity.this, ProdutoDetalhesActivity.class);
+                        intent.putExtra("pid", model.getPid());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull

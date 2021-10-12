@@ -160,7 +160,7 @@ public class ConfiguracoesActivity extends AppCompatActivity {
 
                         progressoDialogo.dismiss();
                         
-                        startActivity(new Intent(ConfiguracoesActivity.this, MainActivity.class));
+                        startActivity(new Intent(ConfiguracoesActivity.this, HomeActivity.class));
 
                         Toast.makeText(ConfiguracoesActivity.this, "Atualização das informações do perfil com sucesso.", Toast.LENGTH_SHORT).show();
                         finish();
@@ -187,7 +187,7 @@ public class ConfiguracoesActivity extends AppCompatActivity {
 
         ref.child(Predominante.atualUsuarioOnline.getTelefone()).updateChildren(usuarioMap);
         
-        startActivity(new Intent(ConfiguracoesActivity.this, MainActivity.class));
+        startActivity(new Intent(ConfiguracoesActivity.this, HomeActivity.class));
 
         Toast.makeText(ConfiguracoesActivity.this, "Atualização das informações do perfil atualizada com sucesso.", Toast.LENGTH_SHORT).show();
 
