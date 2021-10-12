@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/pedido_usuario_nome"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Nome de usuário"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/pedido_telefone_numero"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:text="Número de telefone"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/pedido_total_preco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preço Total"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/carrinho_produto_quantidade"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            />
+
+        <TextView
+            android:id="@+id/pedido_endereco_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address, City"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/pedido_total_preco"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/pedido_data_hora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data Hora"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/pedido_endereco_cidade"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/exibir_todos_produtos_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pedido_data_hora"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Exibir todos pedidos de produtos"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            android:background="@android:color/white"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

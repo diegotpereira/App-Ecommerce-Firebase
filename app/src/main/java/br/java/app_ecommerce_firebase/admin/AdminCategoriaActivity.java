@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import br.java.app_ecommerce_firebase.R;
 
 public class AdminCategoriaActivity extends AppCompatActivity {
 

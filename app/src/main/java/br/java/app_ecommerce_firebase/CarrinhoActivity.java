@@ -61,7 +61,9 @@ public class CarrinhoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                txtvalorTotal.setText("Preco Total = Rp." + valorFinal);
+                txtvalorTotal.setText("Preco Total = R$." + valorFinal);
+
+                VerificarEstadoPedido();
 
                 Intent intent = new Intent(CarrinhoActivity.this, FinalizarPedidoActivity.class);
                 intent.putExtra("Preco Total", String.valueOf(valorFinal));
@@ -87,7 +89,7 @@ public class CarrinhoActivity extends AppCompatActivity {
 
                 carrinhoViewHolder.txtProdutoNome.setText(carrinho.getPnome());
                 carrinhoViewHolder.txtProdutoPreco.setText("Preço = " + "Rp." + carrinho.getPreco());
-                carrinhoViewHolder.txtProdutoQuantidade.setText("Quanidade = " + carrinho.getQuantidade());
+                carrinhoViewHolder.txtProdutoQuantidade.setText("Quantidade = " + carrinho.getQuantidade());
 
                 int umTipoProdutoTPreco = ((Integer.valueOf(carrinho.getPreco()))) * Integer.valueOf(carrinho.getQuantidade());
                 valorFinal = valorFinal + umTipoProdutoTPreco;
@@ -174,7 +176,11 @@ public class CarrinhoActivity extends AppCompatActivity {
                         txtvalorTotal.setText("Querido " + usuarioNome + "\n seu pedido foi enviado com sucesso.");
                         recyclerView.setVisibility(View.GONE);
 
-                        Toast.makeText(CarrinhoActivity.this, "você pode comprar mais produtos, assim que receber seu primeiro pedido finalizado.", Toast.LENGTH_SHORT).show();
+                        txtMsg1.setVisibility(View.VISIBLE);
+                        txtMsg1.setText("parabéns, seu pedido foi enviado com sucesso. Em breve você receberá seu pedido em sua porta.");
+                        ProximoProcessoBtn.setVisibility(View.GONE);
+
+                        Toast.makeText(CarrinhoActivity.this, "você pode comprar mais produtos, assim que finalizar seu pedido.", Toast.LENGTH_SHORT).show();
                     } else {
 
                         txtvalorTotal.setText("Estado de envio = Nao enviado");

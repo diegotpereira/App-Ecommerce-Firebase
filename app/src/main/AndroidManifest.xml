@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".admin.AdminUsuarioProdutosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminNovoPedidoActivity"
+            android:exported="true" />
+        <activity
             android:name=".FinalizarPedidoActivity"
             android:exported="true" />
         <activity
@@ -22,10 +28,10 @@
             android:name=".ConfiguracoesActivity"
             android:exported="true" />
         <activity
-            android:name=".AdminAddNovoProdutoActivity"
+            android:name=".admin.AdminAddNovoProdutoActivity"
             android:exported="true" />
         <activity
-            android:name=".AdminCategoriaActivity"
+            android:name=".admin.AdminCategoriaActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
