@@ -40,6 +40,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     RecyclerView.LayoutManager layoutManager;
 
+    private String tipo = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +59,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Substitua por sua própria ação", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Substitua por sua própria ação", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show(); */
+                if (!tipo.equals("Admins")) {
+                    Intent intent = new Intent(HomeActivity.this, CarrinhoActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 

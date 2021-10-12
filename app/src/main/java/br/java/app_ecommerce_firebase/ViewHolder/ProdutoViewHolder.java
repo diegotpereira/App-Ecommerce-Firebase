@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import br.java.app_ecommerce_firebase.Interface.ItemClickListner;
+import br.java.app_ecommerce_firebase.Interface.ItemClickListener;
 import br.java.app_ecommerce_firebase.R;
 
 public class ProdutoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -18,7 +18,7 @@ public class ProdutoViewHolder extends RecyclerView.ViewHolder implements View.O
 
     public ImageView exibirImagem;
 
-    public ItemClickListner listner;
+    public ItemClickListener listner;
 
     public ProdutoViewHolder(@NonNull View itemView) {
 
@@ -31,7 +31,7 @@ public class ProdutoViewHolder extends RecyclerView.ViewHolder implements View.O
         txtProdutoPreco = (TextView) itemView.findViewById(R.id.produto_preco);
     }
 
-    public void setItemClickListner(ItemClickListner listner) {
+    public void setItemClickListner(ItemClickListener listner) {
         this.listner = listner;
     }
     @Override

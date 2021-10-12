@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FinalizarPedidoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CarrinhoActivity"
+            android:exported="true" />
+        <activity
             android:name=".ProdutoDetalhesActivity"
             android:exported="true" />
         <activity
