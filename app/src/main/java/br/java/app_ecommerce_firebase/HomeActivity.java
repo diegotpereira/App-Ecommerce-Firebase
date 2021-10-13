@@ -194,23 +194,34 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_buscar) {
 
-            Intent intent = new Intent(HomeActivity.this, BuscarProdutosActivity.class);
-            startActivity(intent);
+            if (!tipo.equals("Admin")) {
+
+                Intent intent = new Intent(HomeActivity.this, BuscarProdutosActivity.class);
+                startActivity(intent);
+
+            }
 
         } else if (id == R.id.nav_categorias) {
 
         } else if (id == R.id.nav_configuracoes) {
-            Intent intent = new Intent(HomeActivity.this, ConfiguracoesActivity.class);
-            startActivity(intent);
 
+            if (!tipo.equals("Admin")) {
+
+                Intent intent = new Intent(HomeActivity.this, ConfiguracoesActivity.class);
+                startActivity(intent);
+
+            }
         } else if (id == R.id.nav_sair) {
 
-            Paper.book().destroy();
+          if (!tipo.equals("Admin")) {
 
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+              Paper.book().destroy();
+
+              Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+              startActivity(intent);
+              finish();
+          }
 
         }
 

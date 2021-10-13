@@ -119,7 +119,18 @@ public class AdminManterProdutosActivity extends AppCompatActivity {
     }
 
     private void deletarEssesProdutos() {
+        
+        produtosRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                
+                Intent intent = new Intent(AdminManterProdutosActivity.this, AdminCategoriaActivity.class);
+                startActivity(intent);
+                finish();
 
+                Toast.makeText(AdminManterProdutosActivity.this, "esse produto fpo deletado com sucesso.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private  void exibirInformacoesEspecíficasProduto() {
