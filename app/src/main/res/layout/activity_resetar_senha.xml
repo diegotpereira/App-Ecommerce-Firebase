@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResetarSenhaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/resetar_senha"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/título_pagina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Redefinir Senha"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/buscar_numero_telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resetar_senha"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/input_design"
+        android:hint="por favor escreva seu número de telefone"
+        android:padding="14dp" />
+
+    <TextView
+        android:id="@+id/questoes_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buscar_numero_telefone"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="Responda às seguintes perguntas de segurança?"
+        android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/questoes_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questoes_titulo"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="onde seu pai se conheceu pela primeira vez?"
+        android:padding="14dp" />
+
+    <EditText
+        android:id="@+id/questoes_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questoes_1"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="qual seu favorito seu super-herói?"
+        android:padding="14dp" />
+
+    <Button
+        android:id="@+id/verificar_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questoes_2"
+        android:layout_margin="15dp"
+        android:background="@drawable/buttons"
+        android:padding="14dp"
+        android:text="Verificar"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

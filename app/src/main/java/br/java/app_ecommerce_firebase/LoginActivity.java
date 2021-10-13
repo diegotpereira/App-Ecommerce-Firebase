@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import br.java.app_ecommerce_firebase.admin.AdminCategoriaActivity;
 import br.java.app_ecommerce_firebase.predominante.Predominante;
 import br.java.app_ecommerce_firebase.modelo.Usuarios;
@@ -33,8 +35,10 @@ public class LoginActivity extends AppCompatActivity {
     private Button LoginBtn;
 
     private ProgressDialog progressoDialogo;
+
     private TextView AdminLink;
     private TextView NotAdminLink;
+    private TextView EsquecerSenhaLink;
 
     private String nomeBancoPai = "Usuarios";
     private CheckBox chkBoxLembreMe;
@@ -50,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
 
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
+        EsquecerSenhaLink = (TextView) findViewById(R.id.esuqecer_senha_link);
+
         progressoDialogo = new ProgressDialog(this);
 
         chkBoxLembreMe = (CheckBox) findViewById(R.id.lembre_me_chkb);
@@ -59,6 +65,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 LoginUsuario();
+            }
+        });
+
+        EsquecerSenhaLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(LoginActivity.this, ResetarSenhaActivity.class);
+                intent.putExtra("verificar", "login");
+                startActivity(intent);
             }
         });
 

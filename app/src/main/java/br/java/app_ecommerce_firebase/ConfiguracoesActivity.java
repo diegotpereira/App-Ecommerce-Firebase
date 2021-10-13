@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,14 +41,17 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     private EditText usuarioTelefoneEditText;
     private EditText enderecoEditText;
 
-    private TextView perfilAlterarTextBtn;
-    private TextView fecharTextBtn;
+    private TextView PerfilAlterarTxt;
+    private TextView FecharTxt;
     private TextView salvarTextBtn;
 
     private Uri imagemUri;
     private String minhaUrl ="";
     private StorageTask carregarTarefa;
     private StorageReference imagemPerfilArmazenamentoRef;
+
+    private Button SegurancaQuestoesBtn;
+
     private String verificador = "";
 
     @Override
@@ -62,17 +66,28 @@ public class ConfiguracoesActivity extends AppCompatActivity {
         usuarioTelefoneEditText = (EditText) findViewById(R.id.configuracoes_numero_telefone);
         enderecoEditText = (EditText) findViewById(R.id.endereco_configuracoes);
 
-        perfilAlterarTextBtn = (TextView) findViewById(R.id.mudanca_imagem_perfil_btn);
-        fecharTextBtn = (TextView) findViewById(R.id.fechar_configuracoes_btn);
+        PerfilAlterarTxt = (TextView) findViewById(R.id.mudanca_imagem_perfil_btn);
+        FecharTxt = (TextView) findViewById(R.id.fechar_configuracoes_btn);
         salvarTextBtn = (TextView) findViewById(R.id.atualizar_conta_configuracoes_btn);
+        SegurancaQuestoesBtn = (Button) findViewById(R.id.questoes_seguranca_btn);
 
         exibirInfoUsuario(perfilImagemView, nomeCompletoEditText, usuarioTelefoneEditText, enderecoEditText );
 
-        fecharTextBtn.setOnClickListener(new View.OnClickListener() {
+        FecharTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 finish();
+            }
+        });
+
+        SegurancaQuestoesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ConfiguracoesActivity.this, ResetarSenhaActivity.class);
+                intent.putExtra("verificar", "definicoes");
+                startActivity(intent);
             }
         });
 
@@ -91,7 +106,7 @@ public class ConfiguracoesActivity extends AppCompatActivity {
             }
         });
 
-        perfilAlterarTextBtn.setOnClickListener(new View.OnClickListener() {
+        PerfilAlterarTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
