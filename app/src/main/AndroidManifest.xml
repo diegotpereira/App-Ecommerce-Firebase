@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".BuscarProdutosActivity"
+            android:exported="true" />
+        <activity
             android:name=".admin.AdminUsuarioProdutosActivity"
             android:exported="true" />
         <activity

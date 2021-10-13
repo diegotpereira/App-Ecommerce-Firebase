@@ -8,8 +8,10 @@
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/drawable/input_design.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/drawable/login.xml" value="0.2890625" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_add_novo_produto.xml" value="0.1" />
-        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_categoria.xml" value="0.1" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_categoria.xml" value="0.25" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_novo_pedido.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_usuario_produtos.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_buscar_produtos.xml" value="0.183206106870229" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_carrinho.xml" value="0.22" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_configuracoes.xml" value="0.25" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_finalizar_pedido.xml" value="0.27291666666666664" />

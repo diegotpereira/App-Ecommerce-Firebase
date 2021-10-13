@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import br.java.app_ecommerce_firebase.MainActivity;
 import br.java.app_ecommerce_firebase.R;
 
 public class AdminCategoriaActivity extends AppCompatActivity {
@@ -25,6 +27,9 @@ public class AdminCategoriaActivity extends AppCompatActivity {
     private ImageView Laptops;
     private ImageView relogios;
     private ImageView celulares;
+
+    private Button VerificarPedidosBtn;
+    private Button SairBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,26 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         relogios = (ImageView) findViewById(R.id.relogios);
         celulares = (ImageView) findViewById(R.id.celulares);
 
+        VerificarPedidosBtn = findViewById(R.id.verificar_pedidos_btn);
+        SairBtn = findViewById(R.id.admin_sair_btn);
+
+        SairBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoriaActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        VerificarPedidosBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoriaActivity.this, AdminNovoPedidoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         tCamisas.setOnClickListener(new View.OnClickListener() {
             @Override

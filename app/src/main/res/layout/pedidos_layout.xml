@@ -7,6 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
         android:padding="10dp"
         android:layout_margin="10dp">
 
@@ -43,7 +44,7 @@
             android:textColor="@android:color/white"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_below="@+id/carrinho_produto_quantidade"
+            android:layout_above="@+id/carrinho_produto_quantidade"
             android:gravity="center"
             android:layout_marginTop="25dp"
             />
@@ -52,14 +53,13 @@
             android:id="@+id/pedido_endereco_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address, City"
+            android:layout_below="@+id/pedido_total_preco"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Endereço, Cidade"
             android:textColor="@android:color/white"
             android:textSize="14dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/pedido_total_preco"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/pedido_data_hora"
