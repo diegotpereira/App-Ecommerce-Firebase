@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,11 +23,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.ViewHolder.ProdutoViewHolder;
 import br.java.app_ecommerce_firebase.admin.AdminManterProdutosActivity;
 import br.java.app_ecommerce_firebase.modelo.Produtos;

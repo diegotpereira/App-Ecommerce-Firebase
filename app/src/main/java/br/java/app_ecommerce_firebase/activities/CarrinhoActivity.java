@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.ViewHolder.CarrinhoViewHolder;
 import br.java.app_ecommerce_firebase.modelo.Carrinho;
 import br.java.app_ecommerce_firebase.predominante.Predominante;

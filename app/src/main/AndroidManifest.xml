@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ResetarSenhaActivity"
+            android:name=".sellers.VendedorLoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sellers.RegistroVendedorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ResetarSenhaActivity"
             android:exported="true" />
         <activity
             android:name=".admin.AdminManterProdutosActivity"
             android:exported="true" />
         <activity
-            android:name=".BuscarProdutosActivity"
+            android:name=".activities.BuscarProdutosActivity"
             android:exported="true" />
         <activity
             android:name=".admin.AdminUsuarioProdutosActivity"
@@ -25,16 +31,16 @@
             android:name=".admin.AdminNovoPedidoActivity"
             android:exported="true" />
         <activity
-            android:name=".FinalizarPedidoActivity"
+            android:name=".activities.FinalizarPedidoActivity"
             android:exported="true" />
         <activity
-            android:name=".CarrinhoActivity"
+            android:name=".activities.CarrinhoActivity"
             android:exported="true" />
         <activity
-            android:name=".ProdutoDetalhesActivity"
+            android:name=".activities.ProdutoDetalhesActivity"
             android:exported="true" />
         <activity
-            android:name=".ConfiguracoesActivity"
+            android:name=".activities.ConfiguracoesActivity"
             android:exported="true" />
         <activity
             android:name=".admin.AdminAddNovoProdutoActivity"
@@ -43,17 +49,17 @@
             android:name=".admin.AdminCategoriaActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:exported="true"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".RegistrarActivity"
+            android:name=".activities.RegistrarActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

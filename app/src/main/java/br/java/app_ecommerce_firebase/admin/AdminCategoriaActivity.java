@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import br.java.app_ecommerce_firebase.HomeActivity;
-import br.java.app_ecommerce_firebase.MainActivity;
+import br.java.app_ecommerce_firebase.activities.HomeActivity;
+import br.java.app_ecommerce_firebase.activities.MainActivity;
 import br.java.app_ecommerce_firebase.R;
 
 public class AdminCategoriaActivity extends AppCompatActivity {

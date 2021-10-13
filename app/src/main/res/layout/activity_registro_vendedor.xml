@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sellers.RegistroVendedorActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/imagem_vendedor"
+        android:scaleType="centerCrop"
+        android:src="@drawable/seller"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo_vendedor"
+        android:text="Formulário de registro do vendedor"
+        android:gravity="center"
+        android:layout_below="@+id/imagem_vendedor"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="@android:color/holo_green_light"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendedor_nome"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/titulo_vendedor"
+        android:hint="Nome..."
+        android:inputType="text"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendedor_telefone"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/vendedor_nome"
+        android:hint="Telefone..."
+        android:inputType="number"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendedor_email"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/vendedor_telefone"
+        android:hint="Email..."
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendedor_senha"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/vendedor_email"
+        android:hint="Senha..."
+        android:inputType="text"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/vendedor_endereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vendedor_senha"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:hint="Loja - Endereço de Vendas..."
+        android:inputType="text"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/vendedor_registro_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vendedor_endereco"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        android:text="Registrar"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/vendedor_tem_conta_btn"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/vendedor_registro_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="83dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="Já tem uma conta?"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+
+</RelativeLayout>

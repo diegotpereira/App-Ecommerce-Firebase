@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+
+import br.java.app_ecommerce_firebase.R;
 
 public class RegistrarActivity extends AppCompatActivity {
 

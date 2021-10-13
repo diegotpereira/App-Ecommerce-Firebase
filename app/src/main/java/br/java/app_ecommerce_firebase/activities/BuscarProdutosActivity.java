@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.ViewHolder.ProdutoViewHolder;
 import br.java.app_ecommerce_firebase.modelo.Produtos;
 

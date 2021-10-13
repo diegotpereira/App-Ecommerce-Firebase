@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase;
+package br.java.app_ecommerce_firebase.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
+import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.predominante.Predominante;
 
 public class FinalizarPedidoActivity extends AppCompatActivity {
