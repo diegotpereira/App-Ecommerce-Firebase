@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import br.java.app_ecommerce_firebase.HomeActivity;
 import br.java.app_ecommerce_firebase.MainActivity;
 import br.java.app_ecommerce_firebase.R;
 
@@ -30,6 +31,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
 
     private Button VerificarPedidosBtn;
     private Button SairBtn;
+    private Button ManterProdutoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,16 @@ public class AdminCategoriaActivity extends AppCompatActivity {
 
         VerificarPedidosBtn = findViewById(R.id.verificar_pedidos_btn);
         SairBtn = findViewById(R.id.admin_sair_btn);
+        ManterProdutoBtn = findViewById(R.id.manter_btn);
+
+        ManterProdutoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminCategoriaActivity.this, HomeActivity.class);
+                intent.putExtra("Admin", "Admin");
+                startActivity(intent);
+            }
+        });
 
         SairBtn.setOnClickListener(new View.OnClickListener() {
             @Override

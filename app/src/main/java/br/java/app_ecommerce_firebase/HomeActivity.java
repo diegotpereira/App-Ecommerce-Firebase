@@ -29,8 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import br.java.app_ecommerce_firebase.ViewHolder.ProdutoViewHolder;
+import br.java.app_ecommerce_firebase.admin.AdminManterProdutosActivity;
 import br.java.app_ecommerce_firebase.modelo.Produtos;
 import br.java.app_ecommerce_firebase.predominante.Predominante;
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,6 +49,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if (bundle != null) {
+            tipo = getIntent().getExtras().get("Admin").toString();
+        }
+
         ProdutosRef = FirebaseDatabase.getInstance().getReference().child("Produtos");
 
         Paper.init(this);
@@ -61,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 /*Snackbar.make(view, "Substitua por sua própria ação", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show(); */
-                if (!tipo.equals("Admins")) {
+                if (!tipo.equals("Admin")) {
                     Intent intent = new Intent(HomeActivity.this, CarrinhoActivity.class);
                     startActivity(intent);
                 }
@@ -78,9 +87,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         View vistaCabecalho = navigationView.getHeaderView(0);
         TextView visualizacaoTextoNomeUsuario = vistaCabecalho.findViewById(R.id.nome_perfil_usuario);
+        CircleImageView perfilVisualizacaoImagem = vistaCabecalho.findViewById(R.id.imagem_perfil_usuário);
 
-        visualizacaoTextoNomeUsuario.setText(Predominante.atualUsuarioOnline.getNome());
-        Picasso.get().load(Predominante.atualUsuarioOnline.getImagem()).placeholder(R.drawable.profile);
+        if (!tipo.equals("Admin")) {
+
+            visualizacaoTextoNomeUsuario.setText(Predominante.atualUsuarioOnline.getNome());
+            Picasso.get().load(Predominante.atualUsuarioOnline.getImagem()).placeholder(R.drawable.profile).into(perfilVisualizacaoImagem);
+        }
 
         recyclerView = findViewById(R.id.reciclar_menu);
         recyclerView.setHasFixedSize(true);
@@ -97,18 +110,28 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FirebaseRecyclerAdapter<Produtos, ProdutoViewHolder> adapter = new FirebaseRecyclerAdapter<Produtos, ProdutoViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProdutoViewHolder holder, int position, @NonNull Produtos model) {
+
                 holder.txtProdutoNome.setText(model.getPnome());
                 holder.txtProdutoDescricao.setText(model.getDescricao());
                 holder.txtProdutoPreco.setText(model.getPreco());
-                Picasso.get().load(model.getImagem()).into(holder.exibirImagem);
+                    Picasso.get().load(model.getImagem()).into(holder.exibirImagem);
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        Intent intent = new Intent(HomeActivity.this, ProdutoDetalhesActivity.class);
-                        intent.putExtra("pid", model.getPid());
-                        startActivity(intent);
+                        if (tipo.equals("Admin")) {
+
+                            Intent intent = new Intent(HomeActivity.this, AdminManterProdutosActivity.class);
+                            intent.putExtra("pid", model.getPid());
+                            startActivity(intent);
+
+                        } else {
+
+                            Intent intent = new Intent(HomeActivity.this, ProdutoDetalhesActivity.class);
+                            intent.putExtra("pid", model.getPid());
+                            startActivity(intent);
+                        }
                     }
                 });
             }
