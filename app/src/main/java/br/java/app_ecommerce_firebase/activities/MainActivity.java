@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.predominante.Predominante;
 import br.java.app_ecommerce_firebase.modelo.Usuarios;
+import br.java.app_ecommerce_firebase.sellers.VendedorRegistroActivity;
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button aderirAgoraBtn;
     private Button loginBtn;
     private ProgressDialog barraCarregamento;
-
+    private TextView VendedorTxtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         aderirAgoraBtn = (Button) findViewById(R.id.principal_junte_agora_btn);
         loginBtn = (Button) findViewById(R.id.principal_login_btn);
         barraCarregamento = new ProgressDialog(this);
+        VendedorTxtView = (TextView) findViewById(R.id.vendedor_login_btn);
 
         Paper.init(this);
 
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        VendedorTxtView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VendedorRegistroActivity.class);
                 startActivity(intent);
             }
         });

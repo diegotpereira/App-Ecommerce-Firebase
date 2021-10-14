@@ -13,7 +13,7 @@
             android:name=".sellers.VendedorLoginActivity"
             android:exported="true" />
         <activity
-            android:name=".sellers.RegistroVendedorActivity"
+            android:name=".sellers.VendedorRegistroActivity"
             android:exported="true" />
         <activity
             android:name=".activities.ResetarSenhaActivity"
