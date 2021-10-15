@@ -109,7 +109,7 @@ public class AdminManterProdutosActivity extends AppCompatActivity {
 
                         Toast.makeText(AdminManterProdutosActivity.this, "Alterações aplicadas com sucesso.", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(AdminManterProdutosActivity.this, AdminCategoriaActivity.class);
+                        Intent intent = new Intent(AdminManterProdutosActivity.this, VendedorProdutoCategoriaActivity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -124,7 +124,7 @@ public class AdminManterProdutosActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 
-                Intent intent = new Intent(AdminManterProdutosActivity.this, AdminCategoriaActivity.class);
+                Intent intent = new Intent(AdminManterProdutosActivity.this, VendedorProdutoCategoriaActivity.class);
                 startActivity(intent);
                 finish();
 

@@ -18,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.activities.MainActivity;
+import br.java.app_ecommerce_firebase.admin.VendedorProdutoCategoriaActivity;
 import br.java.app_ecommerce_firebase.sellers.ui.home.HomeFragment;
 
 
@@ -35,19 +36,25 @@ public class VendedorHomeActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
+
                 case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    Intent intentAdd = new Intent(VendedorHomeActivity.this, VendedorProdutoCategoriaActivity.class);
+                    startActivity(intentAdd);
+                    finish();
                     return true;
+
                 case R.id.navigation_logout:
 
                     final FirebaseAuth mAuth;
                     mAuth = FirebaseAuth.getInstance();
                     mAuth.signOut();
 
-                    Intent intent = new Intent(VendedorHomeActivity.this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+                    Intent intentMain = new Intent(VendedorHomeActivity.this, MainActivity.class);
+                    intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intentMain);
                     finish();
+
+
 
                     return true;
             }

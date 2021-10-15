@@ -52,10 +52,10 @@
             android:name=".activities.ConfiguracoesActivity"
             android:exported="true" />
         <activity
-            android:name=".admin.AdminAddNovoProdutoActivity"
+            android:name=".sellers.VendedorAddNovoProdutoActivity"
             android:exported="true" />
         <activity
-            android:name=".admin.AdminCategoriaActivity"
+            android:name=".admin.VendedorProdutoCategoriaActivity"
             android:exported="true" />
         <activity
             android:name=".activities.HomeActivity"

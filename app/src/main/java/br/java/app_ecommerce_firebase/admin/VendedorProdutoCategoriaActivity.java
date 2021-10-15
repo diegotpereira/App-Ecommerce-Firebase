@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import br.java.app_ecommerce_firebase.activities.HomeActivity;
-import br.java.app_ecommerce_firebase.activities.MainActivity;
 import br.java.app_ecommerce_firebase.R;
+import br.java.app_ecommerce_firebase.sellers.VendedorAddNovoProdutoActivity;
 
-public class AdminCategoriaActivity extends AppCompatActivity {
+public class VendedorProdutoCategoriaActivity extends AppCompatActivity {
 
     private ImageView tCamisas;
     private ImageView camisasEsportivas;
@@ -29,14 +27,14 @@ public class AdminCategoriaActivity extends AppCompatActivity {
     private ImageView relogios;
     private ImageView celulares;
 
-    private Button VerificarPedidosBtn;
-    private Button SairBtn;
-    private Button ManterProdutoBtn;
+//    private Button VerificarPedidosBtn;
+//    private Button SairBtn;
+//    private Button ManterProdutoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_categoria);
+        setContentView(R.layout.activity_vendedor_add_categoria);
 
         tCamisas = (ImageView) findViewById(R.id.t_camisas);
         camisasEsportivas = (ImageView) findViewById(R.id.esportes_t_camisas);
@@ -53,41 +51,41 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         relogios = (ImageView) findViewById(R.id.relogios);
         celulares = (ImageView) findViewById(R.id.celulares);
 
-        VerificarPedidosBtn = findViewById(R.id.verificar_pedidos_btn);
-        SairBtn = findViewById(R.id.admin_sair_btn);
-        ManterProdutoBtn = findViewById(R.id.manter_btn);
-
-        ManterProdutoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, HomeActivity.class);
-                intent.putExtra("Admin", "Admin");
-                startActivity(intent);
-            }
-        });
-
-        SairBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        VerificarPedidosBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminNovoPedidoActivity.class);
-                startActivity(intent);
-            }
-        });
+//        VerificarPedidosBtn = findViewById(R.id.verificar_pedidos_btn);
+//        SairBtn = findViewById(R.id.admin_sair_btn);
+//        ManterProdutoBtn = findViewById(R.id.manter_btn);
+//
+//        ManterProdutoBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(AdminCategoriaActivity.this, HomeActivity.class);
+//                intent.putExtra("Admin", "Admin");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        SairBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(AdminCategoriaActivity.this, MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
+//
+//        VerificarPedidosBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(AdminCategoriaActivity.this, AdminNovoPedidoActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         tCamisas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "tCamisas");
                 startActivity(intent);
             }
@@ -96,7 +94,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         camisasEsportivas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Camisetas esportes");
                 startActivity(intent);
             }
@@ -105,7 +103,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         vestidosFemininos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Vestidos femininos");
                 startActivity(intent);
             }
@@ -114,7 +112,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         sueteres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Sueteres");
                 startActivity(intent);
             }
@@ -123,7 +121,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         oculos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Oculos");
                 startActivity(intent);
             }
@@ -132,7 +130,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         chapeusBones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Chapeus Bones");
                 startActivity(intent);
             }
@@ -141,7 +139,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         muchilasBolsasCarteiras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Muchilas Bolsas Carteiras");
                 startActivity(intent);
             }
@@ -150,7 +148,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         sapatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Sapatos");
                 startActivity(intent);
             }
@@ -159,7 +157,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         fonesOuvidosSemFio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Fones sem Fio");
                 startActivity(intent);
             }
@@ -168,7 +166,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         Laptops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Laptos");
                 startActivity(intent);
             }
@@ -177,7 +175,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         relogios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Relogios");
                 startActivity(intent);
             }
@@ -186,7 +184,7 @@ public class AdminCategoriaActivity extends AppCompatActivity {
         celulares.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoriaActivity.this, AdminAddNovoProdutoActivity.class);
+                Intent intent = new Intent(VendedorProdutoCategoriaActivity.this, VendedorAddNovoProdutoActivity.class);
                 intent.putExtra("categoria", "Celuares");
                 startActivity(intent);
             }
