@@ -34,6 +34,7 @@ public class VendedorRegistroActivity extends AppCompatActivity {
     private EditText enderecoEntrada;
 
     private Button VendedorLoginBtn;
+    private Button VendedorRegistroBtn;
 
 
     private FirebaseAuth mAuth;
@@ -59,7 +60,7 @@ public class VendedorRegistroActivity extends AppCompatActivity {
 
 
         VendedorLoginBtn = findViewById(R.id.vendedor_login_btn);
-        VendedorLoginBtn = findViewById(R.id.vendedor_registro_btn);
+        VendedorRegistroBtn = findViewById(R.id.vendedor_registro_btn);
 
         VendedorLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +70,7 @@ public class VendedorRegistroActivity extends AppCompatActivity {
             }
         });
 
-        VendedorLoginBtn.setOnClickListener(new View.OnClickListener() {
+        VendedorRegistroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

@@ -29,11 +29,14 @@
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/app_bar_home.xml" value="0.18" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/carrinho_itens.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/content_home.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/fragment_dashboard.xml" value="0.1078125" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/fragment_home.xml" value="0.1078125" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/fragment_notifications.xml" value="0.1078125" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/nav_header_home.xml" value="0.18" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/pedidos_layout.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/produto_itens_layout.xml" value="0.2151394422310757" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/menu/activity_home_drawer.xml" value="0.67" />
-        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/menu/home.xml" value="0.25" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/xml/network_security_config.xml" value="0.1078125" />
       </map>
