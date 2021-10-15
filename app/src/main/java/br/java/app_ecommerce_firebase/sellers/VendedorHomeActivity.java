@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -44,16 +45,17 @@ public class VendedorHomeActivity extends AppCompatActivity {
 
     private DatabaseReference naoverificProdutosRef;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationıtemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationıtemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
-        public boolean onNavigationItemSelected (@NonNull MenuItem item) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             switch (item.getItemId()) {
 
                 case R.id.navigation_home:
 //                    mTextMessage.setText(R.string.title_home);
-                    Intent intentHome = new Intent(VendedorHomeActivity.this, VendedorHomeActivity  .class );
+                    Intent intentHome = new Intent(VendedorHomeActivity.this, VendedorHomeActivity.class);
                     startActivity(intentHome);
                     return true;
 
@@ -74,14 +76,10 @@ public class VendedorHomeActivity extends AppCompatActivity {
                     startActivity(intentMain);
                     finish();
 
-
-
                     return true;
             }
-
             return false;
         }
-
     };
 
     @Override
@@ -89,7 +87,9 @@ public class VendedorHomeActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendedor_home);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationıtemSelectedListener);
 
@@ -100,7 +100,7 @@ public class VendedorHomeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_add, R.id.navigation_logout).build();
+        //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_add, R.id.navigation_logout).build();
 
     }
 
@@ -112,7 +112,7 @@ public class VendedorHomeActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Produtos, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Produtos, ItemViewHolder>(opcoes) {
             @Override
-            protected void onBindViewHolder(@NonNull ItemViewHolder produtoViewHolder, int position, @NonNull Produtos produtos) {
+            protected void onBindViewHolder(@NonNull ItemViewHolder produtoViewHolder, int position, @NonNull final Produtos produtos) {
 
                 produtoViewHolder.txtProdutoNome.setText(produtos.getPnome());
                 produtoViewHolder.txtProdutoDescricao.setText("Estado : " + produtos.getDescricao());

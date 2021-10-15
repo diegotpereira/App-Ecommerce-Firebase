@@ -66,7 +66,6 @@
             android:textColor="@color/colorPrimaryDark"
             />
 
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
