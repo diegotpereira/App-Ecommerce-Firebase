@@ -253,7 +253,7 @@ public class VendedorAddNovoProdutoActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Intent intent = new Intent(VendedorAddNovoProdutoActivity.this, VendedorProdutoCategoriaActivity.class);
+                    Intent intent = new Intent(VendedorAddNovoProdutoActivity.this, VendedorHomeActivity.class);
                     startActivity(intent);
                     
                     carregarBarra.dismiss();
