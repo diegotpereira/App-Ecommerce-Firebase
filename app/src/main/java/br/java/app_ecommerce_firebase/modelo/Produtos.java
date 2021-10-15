@@ -7,6 +7,7 @@ public class Produtos {
     private String preco;
     private String imagem;
     private String categoria;
+    private String produtoEstado;
     private String pid;
     private String data;
     private String hora;
@@ -14,7 +15,7 @@ public class Produtos {
     public Produtos() {
     }
 
-    public Produtos(String pnome, String descricao, String preco, String imagem, String categoria, String pid, String data, String hora) {
+    public Produtos(String pnome, String descricao, String preco, String imagem, String categoria, String pid, String data, String hora, String produtoEstado) {
         this.pnome = pnome;
         this.descricao = descricao;
         this.preco = preco;
@@ -23,6 +24,7 @@ public class Produtos {
         this.pid = pid;
         this.data = data;
         this.hora = hora;
+        this.produtoEstado = produtoEstado;
     }
 
     public String getPnome() {
@@ -87,5 +89,13 @@ public class Produtos {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public String getProdutoEstado() {
+        return produtoEstado;
+    }
+
+    public void setProdutoEstado(String produtoEstado) {
+        this.produtoEstado = produtoEstado;
     }
 }
