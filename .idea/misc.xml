@@ -9,6 +9,7 @@
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/drawable/login.xml" value="0.2890625" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_add_novo_produto.xml" value="0.1" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_categoria.xml" value="0.25" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_home.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_manter_produtos.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_novo_pedido.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_admin_usuario_produtos.xml" value="0.27291666666666664" />
@@ -25,7 +26,9 @@
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_resetar_senha.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_vendedor_home.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_vendedor_login.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_vendedor_produto_categoria.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_vendedor_registro.xml" value="0.25" />
+        <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/activity_verificar_novos_produtos.xml" value="0.1" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/app_bar_home.xml" value="0.18" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/carrinho_itens.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/administrator/AndroidStudioProjects/AppEcommerceFirebase/app/src/main/res/layout/content_home.xml" value="0.14270833333333333" />

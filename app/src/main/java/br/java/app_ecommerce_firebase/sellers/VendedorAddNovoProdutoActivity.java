@@ -34,7 +34,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import br.java.app_ecommerce_firebase.R;
-import br.java.app_ecommerce_firebase.admin.VendedorProdutoCategoriaActivity;
 
 
 public class VendedorAddNovoProdutoActivity extends AppCompatActivity {
@@ -172,7 +171,7 @@ public class VendedorAddNovoProdutoActivity extends AppCompatActivity {
 
     private void InformacoesSobreProdutoLoja() {
         carregarBarra.setTitle("Adicionar Novo Produto");
-        carregarBarra.setMessage("Caro administrador, aguarde enquanto adicionamos o novo produto.");
+        carregarBarra.setMessage("Caro Vendedor, aguarde enquanto adicionamos o novo produto.");
         carregarBarra.setCanceledOnTouchOutside(false);
         carregarBarra.show();
 

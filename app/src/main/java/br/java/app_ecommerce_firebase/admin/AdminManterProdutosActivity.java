@@ -23,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 import br.java.app_ecommerce_firebase.R;
+import br.java.app_ecommerce_firebase.sellers.VendedorProdutoCategoriaActivity;
 
 public class AdminManterProdutosActivity extends AppCompatActivity {
 

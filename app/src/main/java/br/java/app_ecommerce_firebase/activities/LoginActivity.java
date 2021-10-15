@@ -21,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import br.java.app_ecommerce_firebase.R;
-import br.java.app_ecommerce_firebase.admin.VendedorProdutoCategoriaActivity;
+import br.java.app_ecommerce_firebase.admin.AdminHomeActivity;
+import br.java.app_ecommerce_firebase.sellers.VendedorProdutoCategoriaActivity;
 import br.java.app_ecommerce_firebase.predominante.Predominante;
 import br.java.app_ecommerce_firebase.modelo.Usuarios;
 import io.paperdb.Paper;
@@ -140,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Bem-Vindo admin, você está logado com sucesso ...", Toast.LENGTH_SHORT).show();
                                 progressoDialogo.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, VendedorProdutoCategoriaActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                             } else if (nomeBancoPai.equals("Usuarios")) {
                                 Toast.makeText(LoginActivity.this, "Conectado com sucesso...", Toast.LENGTH_SHORT).show();

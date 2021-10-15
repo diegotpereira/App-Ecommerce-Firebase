@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.AdminHomeActivity">
+
+    <TextView
+        android:id="@+id/admin_bem_vindo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem Vindo querido Admin"
+        android:textAlignment="center"
+        android:textSize="17dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/manter_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/admin_bem_vindo"
+        android:background="@color/colorPrimaryDark"
+        android:text="Manter Produtos"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/verificar_pedidos_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/manter_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Verificar Novos Pedidos"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/verificar_aprovado_produto_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/verificar_pedidos_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Verificar e Aprovar Novos Produtos"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/admin_sair_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Logout"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
+
+</RelativeLayout>

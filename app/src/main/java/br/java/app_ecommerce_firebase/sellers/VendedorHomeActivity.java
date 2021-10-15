@@ -2,7 +2,6 @@ package br.java.app_ecommerce_firebase.sellers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -11,15 +10,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.activities.MainActivity;
-import br.java.app_ecommerce_firebase.admin.VendedorProdutoCategoriaActivity;
-import br.java.app_ecommerce_firebase.sellers.ui.home.HomeFragment;
 
 
 public class VendedorHomeActivity extends AppCompatActivity {

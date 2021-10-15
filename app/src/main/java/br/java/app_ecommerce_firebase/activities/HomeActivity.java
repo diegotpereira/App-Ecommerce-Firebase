@@ -113,8 +113,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 holder.txtProdutoNome.setText(model.getPnome());
                 holder.txtProdutoDescricao.setText(model.getDescricao());
-                holder.txtProdutoPreco.setText(model.getPreco());
-                    Picasso.get().load(model.getImagem()).into(holder.exibirImagem);
+                holder.txtProdutoPreco.setText("Preço =" + model.getPreco());
+                Picasso.get().load(model.getImagem()).into(holder.exibirImagem);
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -142,7 +142,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 View exibir = LayoutInflater.from(parent.getContext()).inflate(R.layout.produto_itens_layout, parent, false);
                 ProdutoViewHolder holder = new ProdutoViewHolder(exibir);
-
                 return holder;
             }
         };

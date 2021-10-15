@@ -1,4 +1,4 @@
-package br.java.app_ecommerce_firebase.admin;
+package br.java.app_ecommerce_firebase.sellers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import br.java.app_ecommerce_firebase.R;
-import br.java.app_ecommerce_firebase.sellers.VendedorAddNovoProdutoActivity;
 
 public class VendedorProdutoCategoriaActivity extends AppCompatActivity {
 
@@ -27,14 +26,11 @@ public class VendedorProdutoCategoriaActivity extends AppCompatActivity {
     private ImageView relogios;
     private ImageView celulares;
 
-//    private Button VerificarPedidosBtn;
-//    private Button SairBtn;
-//    private Button ManterProdutoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendedor_add_categoria);
+        setContentView(R.layout.activity_vendedor_produto_categoria);
 
         tCamisas = (ImageView) findViewById(R.id.t_camisas);
         camisasEsportivas = (ImageView) findViewById(R.id.esportes_t_camisas);
@@ -51,36 +47,6 @@ public class VendedorProdutoCategoriaActivity extends AppCompatActivity {
         relogios = (ImageView) findViewById(R.id.relogios);
         celulares = (ImageView) findViewById(R.id.celulares);
 
-//        VerificarPedidosBtn = findViewById(R.id.verificar_pedidos_btn);
-//        SairBtn = findViewById(R.id.admin_sair_btn);
-//        ManterProdutoBtn = findViewById(R.id.manter_btn);
-//
-//        ManterProdutoBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(AdminCategoriaActivity.this, HomeActivity.class);
-//                intent.putExtra("Admin", "Admin");
-//                startActivity(intent);
-//            }
-//        });
-//
-//        SairBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(AdminCategoriaActivity.this, MainActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        VerificarPedidosBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(AdminCategoriaActivity.this, AdminNovoPedidoActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         tCamisas.setOnClickListener(new View.OnClickListener() {
             @Override
