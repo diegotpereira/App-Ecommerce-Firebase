@@ -9,6 +9,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_vendedor_home">VendedorHomeActivity</string>
     <string name="title_home">Principal</string>
-    <string name="title_dashboard">Painel</string>
+    <string name="title_dashboard">Add</string>
     <string name="title_notifications">Sair</string>
 </resources>

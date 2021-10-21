@@ -24,63 +24,24 @@ import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Objects;
+
 import br.java.app_ecommerce_firebase.R;
 import br.java.app_ecommerce_firebase.ViewHolder.ItemViewHolder;
-import br.java.app_ecommerce_firebase.ViewHolder.ProdutoViewHolder;
 import br.java.app_ecommerce_firebase.activities.MainActivity;
-import br.java.app_ecommerce_firebase.admin.AdminVerificarNovosProdutosActivity;
 import br.java.app_ecommerce_firebase.modelo.Produtos;
 
 
 public class VendedorHomeActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-
     private DatabaseReference naoverificProdutosRef;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationıtemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-            switch (item.getItemId()) {
-
-                case R.id.navigation_home:
-//                    mTextMessage.setText(R.string.title_home);
-                    Intent intentHome = new Intent(VendedorHomeActivity.this, VendedorHomeActivity.class);
-                    startActivity(intentHome);
-                    return true;
-
-                case R.id.navigation_add:
-                    Intent intentAdd = new Intent(VendedorHomeActivity.this, VendedorProdutoCategoriaActivity.class);
-                    startActivity(intentAdd);
-                    finish();
-                    return true;
-
-                case R.id.navigation_logout:
-
-                    final FirebaseAuth mAuth;
-                    mAuth = FirebaseAuth.getInstance();
-                    mAuth.signOut();
-
-                    Intent intentMain = new Intent(VendedorHomeActivity.this, MainActivity.class);
-                    intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intentMain);
-                    finish();
-
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -88,27 +49,57 @@ public class VendedorHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendedor_home);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-
+        BottomNavigationView navView = findViewById(R.id.nav_btn);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationıtemSelectedListener);
 
         naoverificProdutosRef = FirebaseDatabase.getInstance().getReference().child("Produtos");
+
+//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.navigation_home, R.id.navigation_add, R.id.navigation_logout)
+//                .build();
+
 
         recyclerView = findViewById(R.id.vendedor_home_recyclerview);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_add, R.id.navigation_logout).build();
-
     }
 
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationıtemSelectedListener = menuItem -> {
+        switch(menuItem.getItemId())
+        {
+            case R.id.navigation_home:
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+                Intent intentHome = new Intent(VendedorHomeActivity.this, VendedorHomeActivity.class);
+                startActivity(intentHome);
+                return true;
+
+            case R.id.navigation_add:
+                Intent intentCate = new Intent(VendedorHomeActivity.this, VendedorProdutoCategoriaActivity.class);
+                startActivity(intentCate);
+                return true;
+
+            case R.id.navigation_logout:
+                final FirebaseAuth mAuth;
+                mAuth = FirebaseAuth.getInstance();
+                mAuth.signOut();
+
+                Intent intentMain = new Intent(VendedorHomeActivity.this, MainActivity.class);
+                intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intentMain);
+                finish();
+                return true;
+        }
+        return false;
+    };
     @Override
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Produtos> opcoes = new FirebaseRecyclerOptions.Builder<Produtos>().setQuery(naoverificProdutosRef.orderByChild("sid").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()), Produtos.class).build();
+        FirebaseRecyclerOptions<Produtos> opcoes = new FirebaseRecyclerOptions.Builder<Produtos>().setQuery(naoverificProdutosRef.orderByChild("vID").equalTo(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()), Produtos.class).build();
 
         FirebaseRecyclerAdapter<Produtos, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Produtos, ItemViewHolder>(opcoes) {
             @Override
@@ -122,38 +113,33 @@ public class VendedorHomeActivity extends AppCompatActivity {
 
 //                final Produtos itemClick = produtos;
 
-                produtoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+               produtoViewHolder.itemView.setOnClickListener(view -> {
 
-                        final String produtoID = produtos.getPid();
+                   final String produtoID = produtos.getPid();
 
-                        CharSequence opcoes [] = new CharSequence[] {
+                   CharSequence[] opcoes1 = new CharSequence[] {
 
-                                "Sim",
-                                "Não"
-                        };
+                           "Sim",
+                           "Não"
+                   };
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(VendedorHomeActivity.this);
-                        builder.setTitle("Deseja Deletar Este Produto. Tem Certeza?");
-                        builder.setItems(opcoes, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int position) {
+                   AlertDialog.Builder builder = new AlertDialog.Builder(VendedorHomeActivity.this);
+                   builder.setTitle("Deseja Deletar Este Produto. Tem Certeza?");
+                   builder.setItems(opcoes1, (dialogInterface, position1) -> {
 
-                                if (position == 0) {
+                       if (position1 == 0) {
 
-                                    deletarProduto(produtoID);
-                                }
+                           deletarProduto(produtoID);
+                       }
 
-                                if (position == 1) {
+                       if (position1 == 1) {
 
-                                }
-                            }
-                        });
+                       }
+                   });
 
-                        builder.show();
-                    }
-                });
+                   builder.show();
+
+               });
             }
 
             @NonNull
@@ -161,8 +147,7 @@ public class VendedorHomeActivity extends AppCompatActivity {
             public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
                 View exibir = LayoutInflater.from(parent.getContext()).inflate(R.layout.vendedor_item_exibir, parent, false);
-                ItemViewHolder holder = new ItemViewHolder(exibir);
-                return holder;
+                return new ItemViewHolder(exibir);
 
             }
         };
@@ -172,13 +157,14 @@ public class VendedorHomeActivity extends AppCompatActivity {
     }
 
     private void deletarProduto(String produtoID) {
-        
-        naoverificProdutosRef.child(produtoID).child("produtoEstado").setValue("Aprovado").addOnCompleteListener(new OnCompleteListener<Void>() {
+
+//        naoverificProdutosRef.child(produtoID).child("produtoEstado").setValue("Aprovado").addOnCompleteListener(task -> Toast.makeText(VendedorHomeActivity.this, "Esse Item foi Excluído com Sucesso.", Toast.LENGTH_SHORT).show());
+        naoverificProdutosRef.child(produtoID).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-
-                Toast.makeText(VendedorHomeActivity.this, "Esse Item foi Excluído com Sucesso.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VendedorHomeActivity.this, "O item foi excluído com sucesso.", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }
